@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klarna On-Site Messaging Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #0074c8;
+        }
+        .widget-container {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .widget-description {
+            margin-bottom: 10px;
+        }
+        #country-selector, #purchase-amount {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        label {
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .control-group {
+            margin-bottom: 20px;
+        }
+        #currency-symbol {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script
+      async
+      data-environment="playground"
+      src="https://js.klarna.com/web-sdk/v1/klarna.js"
+      data-client-id="klarna_test_client_JDYjbjVXWGdkJEopJXBMY2xSa20lejJXTHlSJFVaR0gsYWFjZWUwZmUtMzIwMC00NzhhLTg1YmUtZjA0MTFlYzM3NTI2LDEsVzlrWWRoY1REU1dBRXFTMkw2dVNYakZhSjlsM01QUjlrNVV4MjhPZk8vdz0"
+    ></script>
+
+    <div class="container">
+        <h1>Klarna On-Site Messaging Preview</h1>
+        <p>This page demonstrates various Klarna On-Site Messaging widgets to inform customers about flexible payment options.</p>
+
+        <div class="control-group">
+            <label for="country-selector">Country:</label>
+            <select id="country-selector">
+                <option value="en-AU">Australia</option>
+                <option value="de-AT">Austria</option>
+                <option value="nl-BE">Belgium</option>
+                <option value="en-CA">Canada</option>
+                <option value="cs-CZ">Czech Republic</option>
+                <option value="da-DK">Denmark</option>
+                <option value="fi-FI">Finland</option>
+                <option value="fr-FR">France</option>
+                <option value="de-DE">Germany</option>
+                <option value="el-GR">Greece</option>
+                <option value="en-IE">Ireland</option>
+                <option value="it-IT">Italy</option>
+                <option value="es-MX">Mexico</option>
+                <option value="nl-NL">Netherlands</option>
+                <option value="en-NZ">New Zealand</option>
+                <option value="nb-NO">Norway</option>
+                <option value="pl-PL">Poland</option>
+                <option value="pt-PT">Portugal</option>
+                <option value="ro-RO">Romania</option>
+                <option value="es-ES">Spain</option>
+                <option value="sv-SE">Sweden</option>
+                <option value="de-CH">Switzerland</option>
+                <option value="en-GB">United Kingdom</option>
+                <option value="en-US">United States</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="purchase-amount">Purchase Amount:</label>
+            <span id="currency-symbol">$</span>
+            <input type="number" id="purchase-amount" value="100.00" min="0" step="0.01">
+        </div>
+
+        <div class="widget-container">
+            <h2>Product Page Widgets</h2>
+            <div class="widget-description">
+                These widgets show payment options for a specific product price.
+            </div>
+            <h3>Credit Promotion Badge</h3>
+            <klarna-placement data-key="credit-promotion-badge" data-locale="en-US" data-purchase-amount="10000"></klarna-placement>
+            
+            <h3>Credit Promotion Auto-size</h3>
+            <klarna-placement data-key="credit-promotion-auto-size" data-locale="en-US" data-purchase-amount="10000"></klarna-placement>
+        </div>
+
+        <div class="widget-container">
+            <h2>Homepage Widgets</h2>
+            <div class="widget-description">
+                These widgets provide general information about Klarna payment options for the homepage.
+            </div>
+            <h3>Top Strip Promotion Badge</h3>
+            <klarna-placement data-key="top-strip-promotion-badge" data-locale="en-US"></klarna-placement>
+            
+            <h3>Top Strip Promotion Auto-size</h3>
+            <klarna-placement data-key="top-strip-promotion-auto-size" data-locale="en-US"></klarna-placement>
+            
+            <h3>Credit Promotion Auto-size</h3>
+            <klarna-placement data-key="credit-promotion-auto-size" data-locale="en-US"></klarna-placement>
+
+            <h3>Sidebar Promotion Auto-size</h3>
+            <klarna-placement data-key="sidebar-promotion-auto-size" data-locale="en-US"></klarna-placement>
+
+            <h3>Homepage Promotion Wide</h3>
+            <klarna-placement data-key="homepage-promotion-wide" data-locale="en-US"></klarna-placement>
+
+            <h3>Homepage Promotion Tall</h3>
+            <klarna-placement data-key="homepage-promotion-tall" data-locale="en-US"></klarna-placement>
+
+            <h3>Homepage Promotion Box</h3>
+            <klarna-placement data-key="homepage-promotion-box" data-locale="en-US"></klarna-placement>
+        </div>
+
+        <div class="widget-container">
+            <h2>Cart Page Widget</h2>
+            <div class="widget-description">
+                This widget shows payment options based on the current cart total.
+            </div>
+            <klarna-placement data-key="credit-promotion-badge" data-locale="en-US" data-purchase-amount="10000"></klarna-placement>
+        </div>
+
+        <div class="widget-container">
+            <h2>Footer Widget</h2>
+            <div class="widget-description">
+                This widget displays payment options and Klarna information in the footer.
+            </div>
+            <klarna-placement data-key="footer-promotion-auto-size" data-locale="en-US"></klarna-placement>
+        </div>
+
+        <div class="widget-container">
+            <h2>FAQs Widget</h2>
+            <div class="widget-description">
+                This widget provides information for frequently asked questions about Klarna.
+            </div>
+            <klarna-placement data-key="info-page" data-locale="en-US"></klarna-placement>
+        </div>
+    </div>
+
+    <script src="https://x.klarnacdn.net/kp/lib/v1/api.js" async></script>
+
+    <script>
+        const currencySymbols = {
+            'en-AU': 'A$', 'de-AT': '€', 'nl-BE': '€', 'en-CA': 'C$',
+            'cs-CZ': 'Kč', 'da-DK': 'kr', 'fi-FI': '€', 'fr-FR': '€',
+            'de-DE': '€', 'el-GR': '€', 'en-IE': '€', 'it-IT': '€',
+            'es-MX': '$', 'nl-NL': '€', 'en-NZ': 'NZ$', 'nb-NO': 'kr',
+            'pl-PL': 'zł', 'pt-PT': '€', 'ro-RO': 'lei', 'es-ES': '€',
+            'sv-SE': 'kr', 'de-CH': 'CHF', 'en-GB': '£', 'en-US': '$'
+        };
+
+        function updateWidgets() {
+            const selectedLocale = document.getElementById('country-selector').value;
+            const purchaseAmount = parseFloat(document.getElementById('purchase-amount').value);
+            const minorUnitAmount = Math.round(purchaseAmount * 100);
+
+            document.getElementById('currency-symbol').textContent = currencySymbols[selectedLocale];
+
+            document.querySelectorAll('klarna-placement').forEach(placement => {
+                placement.setAttribute('data-locale', selectedLocale);
+                if (placement.hasAttribute('data-purchase-amount')) {
+                    placement.setAttribute('data-purchase-amount', minorUnitAmount);
+                }
+            });
+
+            // Refresh Klarna placements
+            window.KlarnaOnsiteService = window.KlarnaOnsiteService || [];
+            window.KlarnaOnsiteService.push({ eventName: 'refresh-placements' });
+        }
+
+        document.getElementById('country-selector').addEventListener('change', updateWidgets);
+        document.getElementById('purchase-amount').addEventListener('input', updateWidgets);
+
+        // Initialize with default values
+        updateWidgets();
+    </script>
+</body>
+</html>
