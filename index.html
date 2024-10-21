@@ -462,10 +462,11 @@
             const localLanguage = countryLanguages[countryCode].local;
             const localLanguageName = countryLanguages[countryCode].name;
             
-            languageSelector.innerHTML = `
-                <option value="${localLanguage}">${localLanguageName}</option>
-                <option value="en">English</option>
-            `;
+            languageSelector.innerHTML = `<option value="${localLanguage}">${localLanguageName}</option>`;
+            
+            if (localLanguage !== 'en') {
+                languageSelector.innerHTML += `<option value="en">English</option>`;
+            }
         }
 
         function updateWidgets() {
@@ -533,8 +534,10 @@
             let views = localStorage.getItem('pageViews');
             if (views === null) {
                 views = 0;
+            } else {
+                views = parseInt(views);
             }
-            views = parseInt(views) + 1;
+            views += 1;
             localStorage.setItem('pageViews', views);
             document.getElementById('view-counter').textContent = `Views: ${views.toString().padStart(8, '0')}`;
         }
