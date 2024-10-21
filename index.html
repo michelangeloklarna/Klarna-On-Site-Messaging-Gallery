@@ -6,38 +6,49 @@
     <title>Klarna On-Site Messaging Preview</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'MS Sans Serif', Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #008080;
+            color: #000;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: #c0c0c0;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border: 2px solid #fff;
+            box-shadow: inset -2px -2px #808080, inset 2px 2px #dfdfdf;
         }
-        h1, h2 {
-            color: #0074c8;
+        h1, h2, h3 {
+            color: #000;
+            text-shadow: 1px 1px #fff;
+        }
+        h1 {
+            background-color: #000080;
+            color: #fff;
+            padding: 10px;
+            text-shadow: none;
         }
         .widget-container {
             margin-bottom: 30px;
-            border: 1px solid #ddd;
+            border: 2px solid #808080;
             padding: 20px;
-            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: inset -2px -2px #dfdfdf, inset 2px 2px #808080;
         }
         .widget-description {
             margin-bottom: 10px;
+            font-style: italic;
         }
         #country-selector, #purchase-amount {
             margin-bottom: 20px;
-            padding: 10px;
+            padding: 5px;
             font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
+            border: 2px solid #808080;
+            background-color: #fff;
+            box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px #808080;
         }
         label {
             display: inline-block;
@@ -46,10 +57,24 @@
         }
         .control-group {
             margin-bottom: 20px;
+            padding: 10px;
+            background-color: #ffe1ed;
+            border: 2px solid #ff69b4;
+            box-shadow: inset -2px -2px #dfdfdf, inset 2px 2px #808080;
         }
         #currency-symbol {
             font-weight: bold;
             margin-right: 5px;
+        }
+        button {
+            background-color: #c0c0c0;
+            border: 2px solid #808080;
+            box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button:active {
+            box-shadow: inset 2px 2px #808080, inset -2px -2px #fff;
         }
     </style>
 </head>
