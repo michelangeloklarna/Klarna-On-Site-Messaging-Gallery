@@ -237,6 +237,36 @@
             font-weight: bold;
             margin: 0 0 2px 0;
         }
+
+        .purchase-amount-container {
+            display: flex;
+            align-items: stretch;
+            width: 160px; /* Increased width to accommodate the gap */
+        }
+
+        #purchase-amount {
+            width: 120px;
+            text-align: right;
+            border: 2px inset #808080;
+            padding: 2px 5px;
+            font-size: 11px;
+            height: 21px;
+            box-sizing: border-box;
+            margin-right: 5px; /* Added margin to create space */
+        }
+
+        #currency-symbol {
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #c0c0c0;
+            border: 2px outset #dfdfdf;
+            font-size: 11px;
+            font-weight: bold;
+            height: 25px;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
@@ -296,8 +326,10 @@
 
             <div class="control-group">
                 <label for="purchase-amount">Purchase Amount:</label>
-                <span id="currency-symbol">$</span>
-                <input type="number" id="purchase-amount" value="100.00" min="0" step="0.01">
+                <div class="purchase-amount-container">
+                    <input type="number" id="purchase-amount" value="100.00" min="0" step="0.01">
+                    <span id="currency-symbol">$</span>
+                </div>
             </div>
 
             <div class="control-group mode-selector">
