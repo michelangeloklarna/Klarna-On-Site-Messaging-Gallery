@@ -286,8 +286,6 @@
       data-client-id="klarna_test_client_JDYjbjVXWGdkJEopJXBMY2xSa20lejJXTHlSJFVaR0gsYWFjZWUwZmUtMzIwMC00NzhhLTg1YmUtZjA0MTFlYzM3NTI2LDEsVzlrWWRoY1REU1dBRXFTMkw2dVNYakZhSjlsM01QUjlrNVV4MjhPZk8vdz0"
     ></script>
 
-    <div id="view-counter" style="font-family: 'Courier New', monospace; font-size: 12px; color: #00FF00; background-color: #000; padding: 5px; display: inline-block; margin-bottom: 10px; position: fixed; top: 10px; right: 10px; z-index: 1000;">Views: 00000001</div>
-
     <div class="container">
         <h1>Klarna On-Site Messaging Gallery</h1>
         <p>This gallery showcases various Klarna On-Site Messaging widgets to inform customers about flexible payment options. 
@@ -537,22 +535,6 @@
         const defaultCountry = document.getElementById('country-selector').value.split('-')[1];
         updateLanguageSelector(defaultCountry);
         updateWidgets();
-
-        // View counter
-        function updateViewCounter() {
-            let views = localStorage.getItem('pageViews');
-            if (views === null) {
-                views = 0;
-            } else {
-                views = parseInt(views);
-            }
-            views += 1;
-            localStorage.setItem('pageViews', views);
-            document.getElementById('view-counter').textContent = `Views: ${views.toString().padStart(8, '0')}`;
-        }
-
-        // Call updateViewCounter when the page loads
-        updateViewCounter();
     </script>
 </body>
 </html>
