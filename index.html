@@ -417,7 +417,7 @@
 
     <script>
         const currencySymbols = {
-            'en-AU': 'A$', 'de-AT': '€', 'nl-BE': '€', 'en-CA': 'C$',
+            'en-AU': 'A$', 'de-AT': '€', 'nl-BE': '€', 'en-CA': 'C$', 'fr-CA': 'C$',
             'cs-CZ': 'Kč', 'da-DK': 'kr', 'fi-FI': '€', 'fr-FR': '€',
             'de-DE': '€', 'el-GR': '€', 'en-IE': '€', 'it-IT': '€',
             'es-MX': '$', 'nl-NL': '€', 'en-NZ': 'NZ$', 'nb-NO': 'kr',
@@ -429,7 +429,7 @@
             'AU': {local: 'en', name: 'English'},
             'AT': {local: 'de', name: 'Deutsch'},
             'BE': {local: 'nl', name: 'Nederlands'},
-            'CA': {local: 'en', name: 'English'},
+            'CA': {local: 'en', name: 'English', additional: [{code: 'fr', name: 'Français'}]},
             'CZ': {local: 'cs', name: 'Čeština'},
             'DK': {local: 'da', name: 'Dansk'},
             'FI': {local: 'fi', name: 'Suomi'},
@@ -471,6 +471,14 @@
             
             languageSelector.innerHTML = `<option value="${localLanguage}">${localLanguageName}</option>`;
             
+            // Add additional languages if available (e.g., French for Canada)
+            if (countryLanguages[countryCode].additional) {
+                countryLanguages[countryCode].additional.forEach(lang => {
+                    languageSelector.innerHTML += `<option value="${lang.code}">${lang.name}</option>`;
+                });
+            }
+            
+            // Add English as an option if it's not already the local language
             if (localLanguage !== 'en') {
                 languageSelector.innerHTML += `<option value="en">English</option>`;
             }
